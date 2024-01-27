@@ -6,4 +6,5 @@ export { ReactComponent as LogOutIcon } from "./log-out-01.svg";
 export { ReactComponent as MenuIcon } from "./menu.svg";
 export { ReactComponent as SearchIcon } from "./search-lg.svg";
 export { ReactComponent as SettingsIcon } from "./settings-01.svg";
+export { ReactComponent as UploadIcon } from "./upload-cloud-02.svg";
 

@@ -33,27 +33,20 @@ const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
 );
 
 
-const DrawerHeader = styled("div")(({ theme }) => ({
-  display: "flex",
-  height: "94px",
-  alignItems: "center",
-  padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
-  ...theme.mixins.toolbar,
-  justifyContent: "flex-start",
-}));
+
 const LayoutBox = ({children}) => {
   const [open, setOpen] = React.useState(true);
 
   return (
     <>
-      <Box sx={{ display: "flex" }}>
+      <Box sx={{ display: "flex" }} className="h-full">
         <CssBaseline />
         <AppBarBox {...{ open, setOpen }} />
         <Main
           open={open}
           style={{ width: open ? `calc(100% - ${drawerWidth}px)` : "100% " }}
-          className={`   !p-0  !max-w-full  !overflow-hidden`}
+          // className={`   !p-0  !max-w-full h-full !overflow-hidden`}
+          className={`   !p-0  !max-w-full h-full  !overflow-x-hidden`}
         >
           <div className="  max-lg:mt-[129px]  lg:mt-[95px]"></div>
           {children}

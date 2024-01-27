@@ -58,7 +58,7 @@ const DrawerBox = ({ open, setOpen }) => {
   return (
     <div
       className={`${
-        !open && "max-lg:hidden max-lg:w-full"
+        !open && "hidden max-lg:w-full"
       } max-lg:fixed h-full top-0 left-0 max-lg:w-full  lg:!max-w-[${drawerWidth}]  z-[9999]`}
     >
       <div className={`relative   h-full  `}>
@@ -66,7 +66,7 @@ const DrawerBox = ({ open, setOpen }) => {
           onClick={() => {
             setOpen(false);
           }}
-          className={`absolute   w-full max-w-[${drawerWidth}] right-0 h-full  top-0 bg-[#0000009d] `}
+          className={`absolute    w-full max-w-[${drawerWidth}] lg:hidden right-0 h-full  top-0 bg-[#0000009d] `}
         ></div>
         <Drawer
           sx={{

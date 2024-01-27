@@ -247,6 +247,7 @@ const MonthlyBarChart = () => {
           {comLink?.map((el, index) => {
             return (
               <div
+              key={index}
                 className={
                   (slot == el?.link && "!text-color_12 ") +
                   ` group hover:!text-color_12 transition-[0.3s] relative text-center cursor-pointer  w-fit px-[4px] pb-[11px] text-color_07 font-[600] leading-[19px] text-[14px]`

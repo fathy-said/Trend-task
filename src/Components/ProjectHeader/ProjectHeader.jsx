@@ -3,7 +3,7 @@ import UserImg from "../../asset/Img/user-01.png";
 let comLink = [
   {
     name: `عن المشروع`,
-    link: `عن المشروع`,
+    link: `aboutProject`,
   },
   {
     name: `الحالة المالية`,
@@ -15,7 +15,7 @@ let comLink = [
   },
   {
     name: `المصروفات`,
-    link: `المصروفات`,
+    link: `expense`,
   },
   {
     name: `أعمال خارج العقد`,
@@ -82,6 +82,7 @@ const ProjectHeader = ({ targetComponent, setTargetComponent }) => {
             {comLink?.map((el, index) => {
               return (
                 <div
+                key={index}
                   className={
                     (targetComponent?.type == el?.link && "!text-color_12 ") +
                     ` group hover:!text-color_12 transition-[0.3s] relative text-center cursor-pointer w-[115.25px] px-[4px] pb-[11px] text-color_07 font-[600] leading-[19px] text-[14px]`
