@@ -1,10 +1,4 @@
-// import React from 'react';
 
-// const ExpenseTable = () => {
-//   return <div>ExpenseTable</div>;
-// }
-
-// export default ExpenseTable;
 import { Table } from 'antd';
 import React from 'react';
 import { DownloadIcon } from '../../asset/Icons';

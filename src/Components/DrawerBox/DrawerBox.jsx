@@ -14,8 +14,7 @@ import { BarChart01, LogOutIcon, LogoBar } from "../../asset/Icons";
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
-  // padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
+
   ...theme.mixins.toolbar,
   justifyContent: "space-between",
   margin:"32px 20px 0 20px"
@@ -112,9 +111,7 @@ const DrawerBox = ({ open, setOpen }) => {
                         ? "p-[12px] active w-full bg-color_02 text-color_04 rounded-[6px] gap-[8px] cursor-pointer flex justify-end items-start"
                         : "p-[12px] transition-[.3s] hover:bg-color_02 hover:text-color_04 w-full text-color_01 rounded-[6px] gap-[8px] cursor-pointer flex justify-end items-start"
                     }
-                    // className={
-                    //   "p-[12px] w-full rounded-[6px] gap-[8px] cursor-pointer flex justify-end items-start"
-                    // }
+
                   >
                     <div className=" text-[16px] font-[600] ">{el?.name}</div>
                     <span>{el?.icon}</span>

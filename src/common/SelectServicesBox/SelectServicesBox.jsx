@@ -20,16 +20,7 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
     marginTop: theme.spacing(3),
   },
   "&": {
-    // borderRadius: 9,
-    // position: "relative",
-    // backgroundColor: "#F2F6FF",
-    // border: "1px solid #797979",
-    // fontSize: 20,
-    // color: "red",
 
-    // padding: "8px 26px 8px 40px",
-    // transition: ".3s",
-    // textAlign: "right",
     borderRadius: 8,
     position: "relative",
     backgroundColor: "#fff",
@@ -42,16 +33,7 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
     transition: ".3s",
         userSelect:"none",
 
-    // "&:focus": {
-    //   borderRadius: 9,
 
-    //   borderColor: "#80bdff",
-    // },
-    // "&:hover": {
-    //   borderRadius: 9,
-
-    //   borderColor: "#80bdff",
-    // },
     "& .MuiInputBase-input::placeholder ": {
       color: "#6E6E70",
       opacity: 1,
@@ -96,7 +78,6 @@ const SelectServicesBox = ({ name, errors, register }) => {
           labelId="demo-customized-select-label"
           id="demo-customized-select"
           name={name}
-          className="ssssssssssssss"
           IconComponent={() => {
             return (
               <div className="  top-[50%] translate-y-[-50%] left-[20px] block absolute ">
@@ -105,11 +86,7 @@ const SelectServicesBox = ({ name, errors, register }) => {
             );
           }}
           defaultValue={"default"}
-          // onChange={(e) => {
-          //   handleChangeSelect(e);
-          //   formik?.handleChange(e);
-          // }}
-          // value={age}
+
           {...register(name)}
           placeholder="ssss"
           input={<BootstrapInput />}

@@ -18,15 +18,7 @@ const BootstrapInputText = styled(InputBase)(({ theme }) => ({
     color: "#6E6E70",
     opacity: 1,
     transition: ".3s",
-    // "&:focus": {
-    //   borderRadius: 9,
-    //   borderColor: "#80bdff",
-    // },
-    // "&:hover": {
-    //   borderRadius: 9,
 
-    //   borderColor: "#80bdff",
-    // },
   },
   "& .MuiInputBase-input::placeholder ": {
     color: "#6E6E70",
@@ -51,9 +43,7 @@ const GlobalInput = ({
         style={{ direction: "rtl" }}
         className=" w-full flex justify-center items-start flex-col gap-[11px]"
       >
-        {/* <div className="text-[#343434] font-[600] text-[20px] mb-[4px] ">
-          {nameInput}
-        </div> */}
+       
         <BootstrapInputText
           className=" w-full placeholder:!text-slate-400"
           defaultValue=""
@@ -61,19 +51,18 @@ const GlobalInput = ({
           name={name}
           placeholder={placeholder}
           {...register(name)}
-          // onChange={formik?.handleChange}
-          // value={formik?.values[name]}
+         
         />
         {errors[name]?.message ? (
           <div
             style={{ color: "red" }}
             className="text-[#c63333] font-[500]  text-[14px] "
           >
-            {/* {textMessage} */}
+      
 
             {errors[name]?.message}
 
-            {/* {t(textMessage)} */}
+           
           </div>
         ) : null}
       </FormControl>
