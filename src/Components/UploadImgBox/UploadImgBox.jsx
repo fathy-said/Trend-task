@@ -103,7 +103,7 @@ const UploadImgBox = ({ errors, watch, register, setError, setValue}) => {
             </div>
             {errors?.img?.message && (
               <div className=" text-[red] font-[500]  text-[14px]  w-full  flex justify-end  mt-[12px] items-start ">
-                <span>{errors?.img?.message}</span>
+                <span className=' text-end'>{errors?.img?.message}</span>
               </div>
             )}
           </div>
