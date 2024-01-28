@@ -85,18 +85,20 @@ const SelectServicesBox = ({ name, errors, register }) => {
               </div>
             );
           }}
-          defaultValue={"default"}
-
+          defaultValue={""}
+          displayEmpty
           {...register(name)}
           placeholder="ssss"
           input={<BootstrapInput />}
           MenuProps={MenuProps}
         >
           <MenuItem
-            value={"default"}
+            disabled
+            value=""
             className=" !text-end !w-full flex !justify-end !items-center"
           >
-            بند المصروف
+
+            <em> بند المصروف</em>
           </MenuItem>
           {dataGetMenu.map((el) => {
             return (
