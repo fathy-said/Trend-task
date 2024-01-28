@@ -15,13 +15,15 @@ const UploadImgBox = ({ errors, watch, register, setError, setValue}) => {
   //set default image
   useEffect(() => {
     if ( watch("img") !== images[0]?.data_url) {
-      if (watch("img")) {
-        setImages([{ data_url: watch("img") }]);
-        setError("img");
+      if (!watch("img")) {
+        // setImages([{ data_url: watch("img") }]);
+        // setError("img");
+              setImages([]);
+
       }
-      else {
-      setImages([])
-      }
+      // else {
+      // setImages([])
+      // }
 
     }
   }, [watch("img") ]);
@@ -30,7 +32,7 @@ const UploadImgBox = ({ errors, watch, register, setError, setValue}) => {
     const onChange = useCallback(
       (imageList, addUpdateIndex) => {
         setImages(imageList);
-        setValue("img", imageList[0]?.data_url);
+        setValue("img", imageList[0]?.file);
         setError("img");
       },
       [setValue, setError]

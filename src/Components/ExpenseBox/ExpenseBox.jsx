@@ -6,11 +6,44 @@ import { FilterIcon, SearchIcon } from "../../asset/Icons/index.js";
 import { ExpenseTable, GlobalInput, SelectServicesBox, UploadImgBox } from "../index.js";
 
 const schema = Yup.object().shape({
-  img: Yup.string().required("SVG, PNG, JPG or GIF (max. 800x400px)"),
+  img: Yup.mixed()
+    .required("الرجاء تحميل صورة")
+    .test(
+      "fileSize",
+      "يجب أن يكون حجم الصورة أصغر من 800 كيلو بايت",
+      (value) => {
+        if (!value) return true; // Handle case where no file is selected
+        return value.size <= 800 * 1024; // 800KB
+      }
+    )
+    .test(
+      "dimensions",
+      "يجب أن تكون الصورة بحجم 800 × 400 بكسل أو أصغر​",
+      async (value) => {
+        if (!value) return true; // Handle case where no file is selected
+        try {
+          const image = await getImageDimensions(value);
+          return image.width <= 800 && image.height <= 400;
+        } catch (error) {
+          throw new Error("Failed to load the image");
+        }
+      }
+    ),
   desc: Yup.string().required("ادخل وصف المصروف"),
   price: Yup.string().required("ادخل المبلغ"),
   order: Yup.string().required("ادخل بند المصروف"),
 });
+
+// Helper function to get image dimensions
+const getImageDimensions = (file) => {
+  return new Promise((resolve, reject) => {
+    const image = new Image();
+    image.onload = () => resolve({ width: image.width, height: image.height });
+    image.onerror = () => reject(new Error("Failed to load the image"));
+    image.src = URL.createObjectURL(file);
+  });
+};
+
 const ExpenseBox = () => {
   // from hooks
   const {
@@ -26,12 +59,13 @@ const ExpenseBox = () => {
     resolver: yupResolver(schema),
     mode: "all",
     defaultValues: {
-      img: "",
+      img: null,
       order: "",
       desc: "",
       price: "",
     },
   });
+
   const onSubmit = async (data) => {
   console.log(data)
 
@@ -92,7 +126,7 @@ const ExpenseBox = () => {
             type="button"
             onClick={() => {
               reset({
-                img: "",
+                img: null,
                 order: "",
                 desc: "",
                 price: "",

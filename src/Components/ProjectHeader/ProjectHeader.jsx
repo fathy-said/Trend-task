@@ -78,7 +78,7 @@ const ProjectHeader = ({ targetComponent, setTargetComponent }) => {
               />
             </div>
           </div>
-          <div className="flex justify-end w-full items-center gap">
+          <div className="flex justify-start flex-row-reverse w-full items-center gap">
             {comLink?.map((el, index) => {
               return (
                 <div

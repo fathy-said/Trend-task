@@ -70,7 +70,6 @@ const columns = [
     },
   },
   {
-    title: "المصروفات",
     title: (
       <div className=" px-[24px] py-[12px]  text-color_16 text-[12px] font-[500]">
         المصروفات
@@ -86,7 +85,6 @@ const columns = [
     },
   },
   {
-    title: "الإيرادات",
     title: (
       <div className=" px-[24px] py-[12px]  text-color_16 text-[12px] font-[500]">
         الإيرادات
@@ -102,7 +100,6 @@ const columns = [
     },
   },
   {
-    title: "ملاحظات",
     title: (
       <div className=" px-[24px] py-[12px]  text-color_16 text-[12px] font-[500]">
         ملاحظات
