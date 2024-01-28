@@ -60,7 +60,7 @@ const ExpenseBox = () => {
     mode: "all",
     defaultValues: {
       img: null,
-      order: "",
+      order: "default",
       desc: "",
       price: "",
     },

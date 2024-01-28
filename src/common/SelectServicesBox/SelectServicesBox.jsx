@@ -104,6 +104,7 @@ const SelectServicesBox = ({ name, errors, register }) => {
               </div>
             );
           }}
+          defaultValue={"default"}
           // onChange={(e) => {
           //   handleChangeSelect(e);
           //   formik?.handleChange(e);
@@ -114,6 +115,12 @@ const SelectServicesBox = ({ name, errors, register }) => {
           input={<BootstrapInput />}
           MenuProps={MenuProps}
         >
+          <MenuItem
+            value={"default"}
+            className=" !text-end !w-full flex !justify-end !items-center"
+          >
+            بند المصروف
+          </MenuItem>
           {dataGetMenu.map((el) => {
             return (
               <MenuItem
