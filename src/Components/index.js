@@ -8,8 +8,10 @@ export { default as SelectServicesBox } from "../common/SelectServicesBox/Select
 export { default as ChartsBox } from "./Charts/ChartsBox.jsx";
 export { default as DrawerBox } from "./DrawerBox/DrawerBox.jsx";
 export { default as ExpenseBox } from "./ExpenseBox/ExpenseBox.jsx";
+export { default as ExpenseTable } from "./ExpenseTable/ExpenseTable.jsx";
 export { default as LayoutBox } from "./LayoutBox/LayoutBox.jsx";
 export { default as NotFound } from "./NotFound/NotFound.jsx";
 export { default as ProjectHeader } from "./ProjectHeader/ProjectHeader.jsx";
 export { default as UploadImgBox } from "./UploadImgBox/UploadImgBox.jsx";
 
+// const ExpenseTable = () => <Table columns={columns} dataSource={data} bordered />;

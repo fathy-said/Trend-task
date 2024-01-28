@@ -2,7 +2,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import React from 'react';
 import { useForm } from "react-hook-form";
 import * as Yup from "yup";
-import { GlobalInput, SelectServicesBox, UploadImgBox } from "../index.js";
+import { FilterIcon, SearchIcon } from "../../asset/Icons/index.js";
+import { ExpenseTable, GlobalInput, SelectServicesBox, UploadImgBox } from "../index.js";
 
 const schema = Yup.object().shape({
   img: Yup.string().required("SVG, PNG, JPG or GIF (max. 800x400px)"),
@@ -103,6 +104,36 @@ const ExpenseBox = () => {
           </button>
         </div>
       </form>
+      <div className="box mt-[32px]  min-h-[400px] chart-shadow  flex gap-[24px] flex-col justify-start items-end">
+        <div className=" px-[16px] mt-[24px] max-[1130px]:flex-col-reverse max-[1130px]:items-end flex justify-center items-center  w-full gap-[16px]">
+          <div className=" flex justify-center items-start flex-1 gap-[12px] ">
+            <button className=" flex min-w-[91px] justify-center items-center  gap-[8px] view_report text-[14px] font-[600] text-color_01 leading-[20px]   py-[12px] px-[16px] text-center border-[1px] rounded-[8px] border-color_06">
+              <>فلتر بـ</>
+              <FilterIcon />
+            </button>
+            <div className="  mb-[20px] border-[1px] gap-[8px] border-color_06 rounded-[8px] flex py-[10px] px-[14px] justify-center items-center">
+              <input
+                type="text"
+                dir="rtl"
+                placeholder="أبحث عن "
+                className=" !border-none max-sm:w-[130px]  !outline-none text-color_07 text-[16px] font-[400]"
+              />
+              <div>
+                <SearchIcon />
+              </div>
+            </div>
+          </div>
+          <div className=" flex flex-col items-end justify-end w-full  max-w-[550px] ">
+            <h3 className="text-[18px] font-[600] text-color_04 leading-[27px]">
+              المصروفات
+            </h3>
+            <h4 className="text-[12px] font-[400] text-color_16 leading-[16.8px] mt-[4px]">
+              نص تنبؤي يمكن أن يستبدل فى هذا المكان
+            </h4>
+          </div>
+        </div>
+        <ExpenseTable />
+      </div>
     </>
   );
 }
